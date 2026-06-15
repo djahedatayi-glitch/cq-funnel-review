@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Doorgevoerde wijzigingen · Compound Quadrant funnel-redesign</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1C2721; --bg2:#212E27; --card:#26352C;
+  --cream:#F2EADD; --body:rgba(242,234,221,.82); --mut:rgba(242,234,221,.58); --mut2:rgba(242,234,221,.40);
+  --hair:rgba(242,234,221,.12); --hair2:rgba(242,234,221,.22);
+  --gold:#D9A52E; --gold-b:#FFD659; --green:#6FAF8B; --red:#E0794F; --ink:#101115;
+  --d:'Space Grotesk',sans-serif; --b:'Inter',sans-serif; --m:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--b);background:var(--bg);color:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.2rem,4vw,2.5rem)}
+h1,h2,h3{font-family:var(--d);color:var(--cream);letter-spacing:-.02em;line-height:1.12}
+.eyebrow{font-family:var(--m);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem}
+h1{font-size:clamp(2rem,5vw,2.9rem);margin-bottom:1rem;font-weight:600}
+.lede{font-size:1.12rem;color:var(--body);max-width:64ch}
+.meta-row{font-family:var(--m);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut2);margin-top:1.3rem;display:flex;gap:.8rem;flex-wrap:wrap}
+
+.grp{margin-top:clamp(2.4rem,5vw,3.6rem)}
+.grp-h{font-size:.74rem;font-family:var(--m);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.grp-h::before{content:"";width:26px;height:2px;background:var(--gold)}
+
+.chg{background:var(--card);border:1px solid var(--hair);margin-bottom:1rem;overflow:hidden}
+.chg-head{display:flex;align-items:baseline;gap:.9rem;padding:1.1rem 1.3rem .8rem}
+.chg-n{font-family:var(--d);font-weight:700;font-size:1.1rem;color:var(--gold);line-height:1;flex-shrink:0}
+.chg-t{font-family:var(--d);font-weight:700;font-size:1.12rem;color:var(--cream);letter-spacing:-.01em}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+@media(max-width:640px){.ba{grid-template-columns:1fr}}
+.ba .col{background:var(--bg2);padding:.95rem 1.3rem}
+.ba .lab{font-family:var(--m);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:.45rem}
+.ba .was .lab{color:var(--red)}
+.ba .nu .lab{color:var(--green)}
+.ba .col p{font-size:.9rem;line-height:1.5}
+.ba .was p{color:var(--mut)}
+.ba .nu p{color:var(--cream)}
+.why{font-size:.88rem;color:var(--mut);line-height:1.55;padding:.9rem 1.3rem 1.1rem}
+.why b{color:var(--cream);font-weight:600}
+.why .tag{font-family:var(--m);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--hair2);padding:.2rem .5rem;border-radius:4px;margin-right:.5rem;white-space:nowrap}
+
+.note{font-size:.85rem;color:var(--mut2);margin-top:2.6rem;border-top:1px solid var(--hair);padding-top:1.2rem;line-height:1.65}
+.note b{color:var(--gold)}
+.tldr{background:linear-gradient(160deg,#30503D,#1E2C23);border:1px solid var(--gold-line,rgba(217,165,46,.34));padding:1.6rem 1.7rem;margin-top:2rem}
+.tldr h2{font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.tldr h2 .k{font-family:var(--m);font-size:.62rem;letter-spacing:.14em;color:var(--ink);background:var(--gold);padding:.25rem .55rem;font-weight:700;border-radius:4px}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.4rem}
+.tldr li{display:grid;grid-template-columns:18px 1fr;gap:.6rem;font-size:.96rem;color:var(--cream);line-height:1.5}
+.tldr li::before{content:"\2192";color:var(--gold-b);font-weight:700}
+.tldr li b{color:var(--gold-b);font-weight:600}
+.vbtns{display:flex;gap:.7rem;flex-wrap:wrap;padding-top:1.2rem;border-top:1px solid rgba(242,234,221,.16)}
+.vbtn{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.92rem;padding:.8rem 1.3rem;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.vbtn.p{background:var(--gold);color:var(--ink);box-shadow:0 10px 26px rgba(217,165,46,.26)}
+.vbtn.p:hover{background:var(--gold-b);transform:translateY(-1px)}
+.vbtn.s{background:transparent;color:var(--cream);border:1px solid var(--hair2)}
+.vbtn.s:hover{background:var(--cream);color:var(--ink)}
+.vbtn .sub{font-family:var(--m);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;opacity:.7;font-weight:600;margin-left:.15rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Funnel-redesign · doorgevoerde wijzigingen</div>
+  <h1>Wat er is veranderd, en waarom.</h1>
+  <p class="lede">Overzicht van de aanpassingen tussen de oorspronkelijke advertentiepagina en de redesign. Per wijziging het origineel, de nieuwe versie en de reden. Copy in Rabi's stem, met de Chase-Hughes overtuigingslaag eroverheen en een humanizer-slotpass.</p>
+  <div class="meta-row"><span>2 varianten: intake &amp; scan</span><span>·</span><span>CQ-huisstijl</span><span>·</span><span>ZZP-inclusief</span></div>
+
+  <div class="tldr">
+    <h2><span class="k">TL;DR</span> In het kort</h2>
+    <ul>
+      <li>Doel: de advertentiepagina laten converteren door <b>elke mentale vraag</b> van de bezoeker op tijd te beantwoorden en de drempel te verlagen.</li>
+      <li>Grootste hefbomen: leid met een <b>kleinere eerste ja</b> (de scan), <b>match de hero met de ad</b> (de boekhouder die niet adviseert), en <b>sluit de zzp'er niet uit</b>.</li>
+      <li>16 concrete wijzigingen, in de <b>echte CQ-huisstijl</b> (geen homepage-kloon, funnel-opbouw behouden).</li>
+      <li>Twee versies klaar om te <b>kiezen of A/B-testen</b>: intake-first of scan-first.</li>
+    </ul>
+    <div class="vbtns">
+      <a class="vbtn p" href="https://djahedatayi-glitch.github.io/cq-funnel-review/funnel-variant-1/" target="_blank" rel="noopener">Bekijk variant 1 <span class="sub">intake</span> &rarr;</a>
+      <a class="vbtn s" href="https://djahedatayi-glitch.github.io/cq-funnel-review/funnel-variant-2/" target="_blank" rel="noopener">Bekijk variant 2 <span class="sub">scan</span> &rarr;</a>
+    </div>
+  </div>
+
+  <!-- A -->
+  <div class="grp">
+    <div class="grp-h">A · Positionering &amp; doelgroep</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">01</span><span class="chg-t">Sluit de zzp'er niet meer uit</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Voor DGA's met een BV en een winst boven &euro;60.000."</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Voor elke ondernemer met een eigen zaak of BV."</p></div>
+      </div>
+      <p class="why"><span class="tag">Doelgroep</span><b>Waarom.</b> De harde uitsluiting in zin 1 joeg het zzp-deel van het advertentieverkeer meteen weg. Een power-tribe werkt sterker als hij selectief-inclusief is. De scan of intake sorteert zelf wie waar staat.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">02</span><span class="chg-t">Twee varianten om uit te kiezen</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Eén pagina met een belafspraak van 30 minuten als enige actie.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Variant 1 met intake (15 min). Variant 2 met de gratis scan als lichtere eerste stap, intake als optioneel vervolg.</p></div>
+      </div>
+      <p class="why"><span class="tag">Chase · compliance</span><b>Waarom.</b> Koud advertentieverkeer; een kleinere eerste ja (de scan) converteert doorgaans beter dan meteen een gesprek. Twee varianten zodat je kunt kiezen of A/B-testen.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">03</span><span class="chg-t">Intake naar 15 minuten</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Gratis intake van 30 minuten."</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Gratis intake van 15 minuten."</p></div>
+      </div>
+      <p class="why"><span class="tag">Drempel</span><b>Waarom.</b> Een kortere afspraak voelt lichter en is makkelijker in te plannen. Lagere drempel, meer aanvragen.</p>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="grp">
+    <div class="grp-h">B · Hero &amp; boodschap</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">04</span><span class="chg-t">Hero matcht de advertentie</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Eigenaar van een BV is niet hetzelfde als eigenaar van vermogen." Abstract en BV-only.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Je boekhouder doet je aangifte. Maar zegt hij ook wat je laat liggen?"</p></div>
+      </div>
+      <p class="why"><span class="tag">Chase · pattern-interrupt</span><b>Waarom.</b> De ad gaat over de boekhouder die niet proactief adviseert. De hero pakt die gedachte nu op (message match). Een herkenbaar feit landt bij sales-radar-hoog verkeer beter dan een abstracte stelling.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">05</span><span class="chg-t">Hero gecentreerd</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Links uitgelijnd.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Gecentreerd: kop, tekst, knoppen en de cijfer-rij.</p></div>
+      </div>
+      <p class="why"><span class="tag">Visueel</span><b>Waarom.</b> Meer rust en focus op de ene boodschap en de ene actie.</p>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="grp">
+    <div class="grp-h">C · Het probleem-blok</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">06</span><span class="chg-t">Praktischer en helderder gemaakt</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>De boekhouder · "Doet je aangifte, kijkt achteruit" · Silo<br>De fiscalist · "Kijkt naar zijn stukje, per aangifte" · Silo<br>Wie je geld beheert · "Weet niks van je structuur" · Silo</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Je boekhouder · "Boekt wat al gebeurd is. Belt je nooit met een tip" · Achteraf<br>Je fiscalist · "Kijkt 1&times; per jaar naar je aangifte" · 1&times; per jaar<br>Wie je geld belegt · "Doet dat los van je bedrijf en belasting" · Los</p></div>
+      </div>
+      <p class="why"><span class="tag">Scanbaarheid</span><b>Waarom.</b> Drie identieke "Silo"-labels waren jargon en zeiden niets. Nu zegt elke regel in gewone taal wat die persoon w&eacute;l en n&iacute;et doet, met een concreet kenmerk (Achteraf / 1&times; per jaar / Los). Afsluiter: "Niemand legt de drie naast elkaar. Daar blijft je geld liggen."</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">07</span><span class="chg-t">Boekhouder niet gedemoniseerd</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Lange tekstblokken die de adviseurs afserveren.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Dat is geen verwijt. Het is zijn werk niet." Kort, en herkadert in plaats van afkraken.</p></div>
+      </div>
+      <p class="why"><span class="tag">Rabi-stem · rol Magier</span><b>Waarom.</b> De doelgroep heeft een band met zijn boekhouder. Hem aanvallen kost vertrouwen. Het probleem herkaderen (hij kijkt achteruit, niemand vooruit) werkt sterker.</p>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="grp">
+    <div class="grp-h">D · Vertrouwen &amp; bezwaren</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">08</span><span class="chg-t">Legaliteit vroeg afgevangen</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Is dit legaal?" stond pas onderin de FAQ.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Geen trucs, geen offshore. Gewoon de regels die in de wet staan." al bij de methode, plus uitgebreid in de FAQ.</p></div>
+      </div>
+      <p class="why"><span class="tag">Bezwaar-afvanging</span><b>Waarom.</b> "Te veel betaald" roept meteen "mag dit wel?" op. Een bezwaar dat je vroeg afvangt, knaagt niet door de rest van de pagina.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">09</span><span class="chg-t">Prijs uit de pagina, naar de FAQ</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Finance-as-a-Service vanaf &euro;750/maand" midden in de pagina, vóór de waarde.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Prijs alleen in de FAQ, geframed: "De intake is gratis. Wat een traject kost, hangt af van wat er te halen valt."</p></div>
+      </div>
+      <p class="why"><span class="tag">Chase · volgorde</span><b>Waarom.</b> Een prijs vóór de waarde activeert de rem. Bij koud verkeer eerst het waarom verankeren, dan pas het wat-kost-het.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">10</span><span class="chg-t">Bewijs naast de claim</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"&euro;30.000&ndash;&euro;80.000" stond meerdere keren los, zonder bewijs.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Het bedrag &eacute;&eacute;n keer, en de geverifieerde cases (&euro;596.000+, &euro;25.940, 200+ trajecten) met bron Vos &amp; Goldberg ernaast.</p></div>
+      </div>
+      <p class="why"><span class="tag">Chase · Suggestibility</span><b>Waarom.</b> Een getal dat los hangt leest als marketing. Hetzelfde getal naast de bron leest als feit.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">11</span><span class="chg-t">Een reden voor nu</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Geen reden om vandaag te bewegen in plaats van "ooit".</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Elke maand dat je wacht, loopt hetzelfde bedrag opnieuw weg."</p></div>
+      </div>
+      <p class="why"><span class="tag">Chase · Temporal</span><b>Waarom.</b> Maakt stilzitten zichtbaar duur, zonder valse urgentie of een countdown.</p>
+    </div>
+  </div>
+
+  <!-- E -->
+  <div class="grp">
+    <div class="grp-h">E · Het slot &amp; de CTA's</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">12</span><span class="chg-t">De witte-beer eruit</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"Geen verkooppraatje. Alleen een eerlijk gesprek."</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Je bepaalt zelf wat je daarna doet."</p></div>
+      </div>
+      <p class="why"><span class="tag">Rabi-stem · negation priming</span><b>Waarom.</b> "Geen verkooppraatje" plant precies de verkoop-twijfel die je wil wegnemen. Vervangen door een affirmatieve autonomie-claim: de lezer houdt de regie.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">13</span><span class="chg-t">Laatste CTA naar praktische inhoud</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>"De een w&eacute;&eacute;t waar zijn geld heen gaat. De ander hoopt het. Twee ondernemers, zelfde winst. Welke ben jij vandaag?" Abstracte spiegel-vraag.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Scan: "Zie precies waar je geld blijft liggen. De scan loopt vier onderdelen langs..."<br>Intake: "Hoor in vijftien minuten hoeveel je nu laat liggen. Een succesmanager loopt je situatie langs..."</p></div>
+      </div>
+      <p class="why"><span class="tag">Praktisch</span><b>Waarom.</b> Concrete inhoud (wat gebeurt er, wat krijg je) overtuigt sterker dan een filosofische vraag. Ook bewust vermeden: "wat er bij jou te halen valt", want dat klonk alsof w&iacute;j iets bij de klant weghalen.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">14</span><span class="chg-t">FAQ "voor wie niet" inclusief</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Harde uitsluiting van wie niet past.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>"Als je net begint en nog geen winst maakt, of alleen je aangifte snel wil indienen, is een doorsnee boekhouder logischer." Twijfel je? Doe de scan.</p></div>
+      </div>
+      <p class="why"><span class="tag">Doelgroep</span><b>Waarom.</b> Zacht afbakenen zonder de zzp'er weg te zetten. Wie twijfelt, stuur je naar de scan in plaats van weg.</p>
+    </div>
+  </div>
+
+  <!-- F -->
+  <div class="grp">
+    <div class="grp-h">F · Stem &amp; merk</div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">15</span><span class="chg-t">CQ-huisstijl, geen homepage-kloon</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Serif-koppen (Fraunces-stijl), eigen funnel-look los van de site.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Dezelfde funnel-opbouw, maar op de CQ-huisstijl: Space Grotesk + Inter, forest + goud, zoals de live site.</p></div>
+      </div>
+      <p class="why"><span class="tag">Continuïteit</span><b>Waarom.</b> Visuele continu&iuml;teit tussen ad, landingspagina en hoofdsite verlaagt onbewust de argwaan. De funnel-structuur en het intake-doel zijn behouden; het is dus geen homepage-kloon.</p>
+    </div>
+
+    <div class="chg">
+      <div class="chg-head"><span class="chg-n">16</span><span class="chg-t">Rabi-stem + Chase + humanizer</span></div>
+      <div class="ba">
+        <div class="col was"><div class="lab">Was</div><p>Agency-copy met K-notatie en algemene formuleringen.</p></div>
+        <div class="col nu"><div class="lab">Nu</div><p>Bedragen voluit (&euro;30.000, geen K), geen em-dashes, antagonist = "ik regel het later" en het kennisverschil. Chase-architectuur eroverheen.</p></div>
+      </div>
+      <p class="why"><span class="tag">Methode</span><b>Waarom.</b> De Chase-laag bepaalt de architectuur en de hefbomen (filter-management, FATE Power/Control, rol Wijze+Magier, gespiegelde-keuze-slot), niet de toon. Rabi's stem draagt de toon, de humanizer is de slotpass.</p>
+    </div>
+  </div>
+
+  <p class="note">
+    <b>De twee varianten staan los klaar.</b> Variant 1 = intake als primaire actie. Variant 2 = de gratis scan als lichtere eerste ja, met de intake als optioneel vervolg. Beide in dezelfde CQ-huisstijl, zodat je ze zuiver tegen elkaar kunt afwegen of A/B-testen.
+  </p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Compound Quadrant · Doe de gratis CQ-scan</title>
+<meta name="description" content="Je boekhouder doet je aangifte. Maar zegt hij ook wat je laat liggen? Doe de gratis CQ-scan: in vijf minuten zie je per onderdeel hoeveel je nu nog laat liggen. Voor elke ondernemer met een eigen zaak of BV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1C2721; --bg2:#212E27; --card:#26352C; --card2:#2B3C31; --footer:#161F19;
+  --feat-a:#30503D; --feat-b:#1E2C23;
+  --cream:#F2EADD; --body:rgba(242,234,221,.82); --mut:rgba(242,234,221,.58); --mut2:rgba(242,234,221,.40);
+  --hair:rgba(242,234,221,.12); --hair2:rgba(242,234,221,.22);
+  --gold:#D9A52E; --gold-b:#FFD659; --gold-soft:rgba(217,165,46,.12); --gold-line:rgba(217,165,46,.34);
+  --green:#6FAF8B; --ink:#101115;
+  --d:'Space Grotesk',sans-serif; --b:'Inter',sans-serif; --m:'JetBrains Mono',monospace;
+  --gut:clamp(1.3rem,4vw,3.5rem); --sy:clamp(3.5rem,7vw,6.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--b);background:var(--bg);color:var(--body);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:120;opacity:.1;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+h1,h2,h3,h4{font-family:var(--d);color:var(--cream);letter-spacing:-.025em;line-height:1.07;font-weight:600}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--gold)}
+.eyebrow{font-family:var(--m);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:.7rem;margin-bottom:1.1rem}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+section{padding:var(--sy) var(--gut);position:relative}
+.inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.feat{background:linear-gradient(165deg,var(--feat-a),var(--feat-b));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.tint{background:var(--bg2)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:90;background:rgba(28,39,33,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;display:flex;align-items:center;justify-content:space-between;padding:.9rem var(--gut);transition:border-color .25s}
+.nav.scr{border-bottom-color:var(--hair)}
+.nav-logo{height:30px;width:auto}
+.nav-cta{background:var(--gold);color:var(--ink);padding:.6rem 1.15rem;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:.4rem;border:none;transition:background .2s,transform .2s}
+.nav-cta:hover{background:var(--gold-b);transform:translateY(-1px)}
+.nav-cta::after{content:"\2192";font-family:var(--d)}
+
+/* BTN */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:1rem;padding:1.05rem 1.7rem;border:none;transition:all .25s var(--ease);white-space:nowrap}
+.btn .a{transition:transform .25s}
+.btn:hover .a{transform:translateX(3px)}
+.btn-g{background:var(--gold);color:var(--ink);box-shadow:0 14px 34px rgba(217,165,46,.24)}
+.btn-g:hover{background:var(--gold-b);transform:translateY(-1px);box-shadow:0 20px 44px rgba(217,165,46,.34)}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--hair2);font-weight:600}
+.btn-ghost:hover{background:var(--cream);color:var(--ink)}
+
+/* HERO */
+.hero{padding:clamp(2.5rem,4vw,4rem) var(--gut) clamp(3rem,5vw,5rem)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 900px 600px at 85% 0%,rgba(48,80,61,.6),transparent 62%);pointer-events:none}
+.hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-eyebrow{font-family:var(--m);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.6rem}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(217,165,46,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,165,46,.5)}70%{box-shadow:0 0 0 10px rgba(217,165,46,0)}100%{box-shadow:0 0 0 0 rgba(217,165,46,0)}}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);letter-spacing:-.03em;margin:0 auto 1.4rem;max-width:18ch;text-wrap:balance}
+.hero-sub{font-size:clamp(1.1rem,1.5vw,1.3rem);color:var(--body);max-width:52ch;margin:0 auto 1.9rem}
+.hero-sub strong{color:var(--cream);font-weight:600}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:1rem}
+.hero-fine{font-size:.9rem;color:var(--mut);font-style:italic;margin-bottom:2.3rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid var(--hair);padding-top:1.7rem;max-width:640px;margin:0 auto;width:100%}
+.hs{text-align:center}
+.hs .n{font-family:var(--d);font-weight:700;font-size:clamp(1.5rem,2.6vw,2rem);color:var(--gold);letter-spacing:-.02em;line-height:1}
+.hs .l{font-family:var(--m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-top:.5rem;line-height:1.4}
+@media(max-width:600px){.hero-stats{grid-template-columns:1fr;gap:1.1rem}.hs{display:flex;align-items:baseline;justify-content:center;gap:.7rem}.hs .l{margin-top:0}}
+
+/* sec-head */
+.sec-head{max-width:680px;margin-bottom:2.6rem}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1rem;font-weight:700}
+.sec-head p{font-size:1.08rem;color:var(--mut);max-width:56ch}
+
+/* HERKEN — quotes */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.q-card{background:var(--card);border:1px solid var(--hair);border-left:3px solid var(--gold);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:1rem}
+.q-card p{font-family:var(--d);font-weight:500;font-size:1.05rem;line-height:1.4;color:var(--cream);letter-spacing:-.01em}
+.q-card .who{font-family:var(--m);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-top:auto}
+@media(max-width:780px){.quotes{grid-template-columns:1fr}}
+
+/* PROBLEEM */
+.prob{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.prob-copy p{font-size:1.12rem;line-height:1.6;margin-bottom:1rem;max-width:48ch}
+.prob-copy p strong{color:var(--cream)}
+.prob-copy .small{font-size:.98rem;color:var(--mut);max-width:48ch}
+.silo{display:flex;flex-direction:column;gap:.8rem}
+.silo-row{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--hair);padding:1.05rem 1.2rem}
+.silo-ic{width:38px;height:38px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.silo-ic svg{width:18px;height:18px}
+.silo-tx{flex:1}
+.silo-tx .t{font-family:var(--d);font-weight:600;color:var(--cream);font-size:1rem;display:block}
+.silo-tx .d{font-size:.86rem;color:var(--mut)}
+.silo-tag{font-family:var(--m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-line);padding:.25rem .5rem;font-weight:600}
+.silo-foot{margin-top:.4rem;font-family:var(--d);font-weight:600;color:var(--gold-b);font-size:1.02rem;text-align:center;padding:.6rem}
+@media(max-width:840px){.prob{grid-template-columns:1fr;gap:2.2rem}}
+
+/* METHODE */
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:.5rem}
+.qd{background:var(--card);border:1px solid var(--hair);border-top:3px solid var(--gold);padding:1.7rem 1.6rem;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.qd:hover{transform:translateY(-4px);box-shadow:0 24px 50px -22px rgba(0,0,0,.5)}
+.qd.q4{background:linear-gradient(160deg,var(--gold),#B0852F);border-top-color:var(--ink)}
+.qd .qn{font-family:var(--m);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.7rem}
+.qd.q4 .qn{color:rgba(16,17,21,.7)}
+.qd h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.02em}
+.qd.q4 h3{color:var(--ink)}
+.qd p{font-size:.95rem;color:var(--mut);line-height:1.5}
+.qd.q4 p{color:rgba(16,17,21,.75)}
+.qd .amt{margin-top:.9rem;font-family:var(--d);font-weight:700;font-size:1.1rem;color:var(--gold)}
+.qd.q4 .amt{color:var(--ink)}
+.meth-cta{margin-top:2rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.meth-cta .legal{font-size:.9rem;color:var(--mut);max-width:38ch}
+.meth-cta .legal b{color:var(--cream)}
+@media(max-width:680px){.q-grid{grid-template-columns:1fr}}
+
+/* CASES */
+.case-stats{display:flex;gap:clamp(1.5rem,4vw,3.5rem);flex-wrap:wrap;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:2rem 0;margin-bottom:1.6rem}
+.cs .n{font-family:var(--d);font-weight:700;font-size:clamp(1.9rem,3.4vw,2.8rem);color:var(--gold);letter-spacing:-.025em;line-height:1}
+.cs .l{font-family:var(--m);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-top:.5rem}
+.case-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.cc{background:var(--card);border:1px solid var(--hair);overflow:hidden;display:flex;flex-direction:column}
+.cc-img{aspect-ratio:4/3;background:linear-gradient(135deg,var(--feat-a),var(--feat-b));position:relative;overflow:hidden}
+.cc-img img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:saturate(.9)}
+.cc-img .tag{position:absolute;left:.8rem;bottom:.8rem;font-family:var(--m);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:rgba(16,22,18,.85);padding:.3rem .55rem;border:1px solid var(--hair);font-weight:600}
+.cc-b{padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.5rem}
+.cc-name{font-family:var(--d);font-weight:700;color:var(--cream);font-size:1rem}
+.cc-amt{font-family:var(--d);font-weight:700;font-size:1.5rem;color:var(--gold);letter-spacing:-.02em;padding:.4rem 0;border-top:1px solid var(--hair)}
+.cc-amt span{font-family:var(--m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600;display:block;margin-top:.1rem}
+.case-foot{margin-top:1.2rem;font-size:.85rem;color:var(--mut2)}
+@media(max-width:780px){.case-cards{grid-template-columns:1fr}}
+
+/* RABI */
+.rabi{display:grid;grid-template-columns:300px 1fr;gap:clamp(1.6rem,3.5vw,3rem);align-items:start;background:var(--card);border:1px solid var(--hair);padding:clamp(1.5rem,3vw,2.4rem)}
+.rabi-foto{aspect-ratio:4/5;overflow:hidden;position:relative}
+.rabi-foto img{width:100%;height:100%;object-fit:cover;object-position:32% 22%;filter:saturate(.9)}
+.rabi-foto figcaption{position:absolute;left:.9rem;bottom:.8rem;font-family:var(--m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,234,221,.8);font-weight:600}
+.rabi-b h3{font-size:clamp(1.5rem,2.6vw,1.9rem);margin-bottom:1rem;font-weight:700}
+.rabi-b p{font-size:1rem;line-height:1.6;margin-bottom:.85rem;max-width:60ch}
+.rabi-b p strong{color:var(--cream)}
+.rabi-b p em{color:var(--gold);font-style:italic}
+.logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-top:1.1rem;margin-top:.3rem;border-top:1px solid var(--hair);font-family:var(--m);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.logos .lbl{font-family:var(--b);font-style:italic;font-size:.78rem;text-transform:none;letter-spacing:0;color:var(--mut2);font-weight:400}
+.logos img{height:17px;width:auto;filter:brightness(0) invert(1) sepia(.2);opacity:.66}
+.logos .txt{font-family:var(--d);font-weight:700;color:var(--body);font-size:.9rem;letter-spacing:-.01em}
+@media(max-width:760px){.rabi{grid-template-columns:1fr}.rabi-foto{max-width:260px}}
+
+/* FAQ */
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--hair);padding:1.1rem 0}
+.faq summary{font-family:var(--d);font-weight:600;font-size:1.1rem;color:var(--cream);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;line-height:1.35}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--m);font-weight:300;font-size:1.5rem;color:var(--gold)}
+.faq details[open] summary::after{content:"\2013"}
+.faq .ans{padding-top:.9rem;font-size:.97rem;line-height:1.65;color:var(--body);max-width:64ch}
+.faq .ans strong{color:var(--cream)}
+
+/* INTAKE CTA + FORM */
+.intake{background:linear-gradient(135deg,var(--feat-b),var(--feat-a));border-top:1px solid var(--hair)}
+.intake::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 800px 500px at 80% 15%,rgba(217,165,46,.2),transparent 60%);pointer-events:none}
+.intake-in{max-width:1080px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.intake-l h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:1.1rem;font-weight:700;text-wrap:balance}
+.intake-l h2 em{color:var(--gold-b)}
+.intake-l p{font-size:1.1rem;color:var(--body);max-width:46ch;margin-bottom:1.4rem}
+.intake-l ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.intake-l li{display:grid;grid-template-columns:20px 1fr;gap:.7rem;font-size:.98rem;color:var(--body)}
+.intake-l li::before{content:"\2713";color:var(--green);font-weight:700}
+.form{background:var(--card);border:1px solid var(--gold-line);padding:1.8rem 1.7rem;box-shadow:0 30px 70px -28px rgba(0,0,0,.6)}
+.form .fl{margin-bottom:1rem}
+.form label{display:block;font-size:.82rem;font-weight:600;color:var(--cream);margin-bottom:.4rem}
+.form input,.form select{width:100%;padding:.85rem 1rem;background:var(--bg2);border:1px solid var(--hair2);color:var(--cream);font-family:var(--b);font-size:.95rem;outline:none;transition:border-color .2s}
+.form input::placeholder{color:var(--mut2)}
+.form input:focus,.form select:focus{border-color:var(--gold)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.form button{width:100%;margin-top:.5rem;background:var(--gold);color:var(--ink);padding:1.1rem;font-weight:700;font-size:1.05rem;border:none;transition:background .2s,transform .2s}
+.form button:hover{background:var(--gold-b);transform:translateY(-1px)}
+.form .fine{font-size:.8rem;color:var(--mut);text-align:center;margin-top:.9rem}
+@media(max-width:860px){.intake-in{grid-template-columns:1fr;gap:2.2rem}.form .row{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--footer);padding:2.5rem var(--gut);border-top:1px solid var(--hair);text-align:center}
+footer .fl{font-family:var(--m);font-size:.72rem;letter-spacing:.08em;color:var(--mut2)}
+
+/* reveal */
+.r{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none}.hero-eyebrow .dot{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" aria-label="Compound Quadrant"><img src="assets/horizontal-cream.svg" alt="Compound Quadrant" class="nav-logo"></a>
+  <button type="button" data-sa-url="https://6f77f9a2-5c27-497b-bbae-266d41c87728.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full" class="nav-cta" style="font-family:inherit">Doe de gratis scan</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-eyebrow r"><span class="dot"></span>Gratis CQ-scan &middot; voor elke ondernemer met een eigen zaak of BV</div>
+    <h1 class="r">Je boekhouder doet je aangifte. Maar zegt hij ook wat je <em>laat liggen</em>?</h1>
+    <p class="hero-sub r"><strong>Meestal niet. Dat is zijn werk niet.</strong> De scan laat het w&eacute;l zien: in vijf minuten zie je per onderdeel hoeveel je nu nog laat liggen, en wat je eraan kunt doen.</p>
+    <div class="hero-cta r">
+      <button type="button" data-sa-url="https://6f77f9a2-5c27-497b-bbae-266d41c87728.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full" class="btn btn-g" style="font-family:inherit">Doe de gratis scan <span class="a">&rarr;</span></button>
+      <a href="#scan" class="btn btn-ghost">Of plan een intake <span class="a">&rarr;</span></a>
+    </div>
+    <p class="hero-fine r">5 minuten &middot; je rapport direct in je inbox</p>
+    <div class="hero-stats r">
+      <div class="hs"><div class="n">&euro;30.000+</div><div class="l">Gemiddeld potentieel per jaar</div></div>
+      <div class="hs"><div class="n">15 jaar</div><div class="l">Finance-ervaring</div></div>
+      <div class="hs"><div class="n">200+</div><div class="l">Ondernemerstrajecten</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HERKEN JE DIT -->
+<section class="tint">
+  <div class="inner">
+    <div class="sec-head r">
+      <div class="eyebrow">Herken je dit?</div>
+      <h2>Dit horen we van ondernemers die voor het eerst met ons spreken.</h2>
+    </div>
+    <div class="quotes">
+      <div class="q-card r"><p>&ldquo;Mijn omzet stijgt, maar onderaan de streep blijft hetzelfde over. Ik snap niet waar het heen gaat.&rdquo;</p><span class="who">Eenmanszaak &middot; consultancy</span></div>
+      <div class="q-card r"><p>&ldquo;Mijn boekhouder belt me nooit met een tip. Ik hoor pas in mei wat ik moet bijbetalen.&rdquo;</p><span class="who">BV &middot; e-commerce</span></div>
+      <div class="q-card r"><p>&ldquo;Ik draai al jaren goed. Toch staat er nog niks op mijn naam. Dat voelt niet kloppen.&rdquo;</p><span class="who">DGA &middot; bouw</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HET ECHTE PROBLEEM -->
+<section class="feat">
+  <div class="inner">
+    <div class="prob">
+      <div class="prob-copy r">
+        <div class="eyebrow">Het echte probleem</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1.1rem">Je boekhouder kijkt achteruit. <em>Niemand kijkt vooruit.</em></h2>
+        <p>Je boekhouder doet je aangifte. Op tijd, netjes. Maar hij belt je nooit om te zeggen dat je te veel betaalt. <strong>Dat is geen verwijt. Het is zijn werk niet.</strong></p>
+        <p class="small">Hij registreert wat geweest is. Niemand kijkt vooruit naar je structuur, je risico of je vermogen. En zo blijft er elk jaar geld liggen dat je had kunnen houden. Niet door fraude, maar door een kennisverschil dat niemand vooraf uitlegt.</p>
+      </div>
+      <div class="silo r">
+        <div class="silo-row"><span class="silo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/></svg></span><span class="silo-tx"><span class="t">Je boekhouder</span><span class="d">Boekt wat al gebeurd is. Belt je nooit met een tip.</span></span><span class="silo-tag">Achteraf</span></div>
+        <div class="silo-row"><span class="silo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><polyline points="14 7 21 7 21 14"/></svg></span><span class="silo-tx"><span class="t">Je fiscalist</span><span class="d">Kijkt 1&times; per jaar naar je aangifte. Niet naar het geheel.</span></span><span class="silo-tag">1&times; per jaar</span></div>
+        <div class="silo-row"><span class="silo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4z"/></svg></span><span class="silo-tx"><span class="t">Wie je geld belegt</span><span class="d">Doet dat los van je bedrijf en je belasting.</span></span><span class="silo-tag">Los</span></div>
+        <div class="silo-foot">Niemand legt de drie naast elkaar. Daar blijft je geld liggen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section id="methode">
+  <div class="inner">
+    <div class="sec-head r">
+      <div class="eyebrow">De Compound Quadrant-methode</div>
+      <h2>Vier kwadranten. <em>E&eacute;n systeem.</em></h2>
+      <p>Geen losse adviezen. E&eacute;n samenhangende aanpak die je cijfers, je fiscale plaatje, je sturing en je vermogen aan elkaar verbindt.</p>
+    </div>
+    <div class="q-grid">
+      <div class="qd r"><div class="qn">Q1 &middot; Foundation</div><h3>Grip op je cijfers</h3><p>Van een aangifte die je elk jaar verrast naar weten waar je staat. Je fundament op orde.</p></div>
+      <div class="qd r"><div class="qn">Q2 &middot; Fiscaal</div><h3>Legaal minder belasting</h3><p>Niet per aangifte, maar als doorlopend ontwerp. Elke euro geoptimaliseerd voordat hij wordt afgedragen.</p><div class="amt">Gem. &euro;30.000&ndash;&euro;50.000 per jaar</div></div>
+      <div class="qd r"><div class="qn">Q3 &middot; Control</div><h3>Bescherming &amp; sturing</h3><p>Priv&eacute; en zakelijk gescheiden, je risico afgedekt, en cijfers waar je vandaag op kunt sturen.</p></div>
+      <div class="qd q4 r"><div class="qn">Q4 &middot; Compound</div><h3>Vermogen dat doorgroeit</h3><p>Je bedrijf bouwt door, je priv&eacute;vermogen apart daarnaast. Twee motoren in plaats van &eacute;&eacute;n.</p></div>
+    </div>
+    <div class="meth-cta r">
+      <button type="button" data-sa-url="https://6f77f9a2-5c27-497b-bbae-266d41c87728.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full" class="btn btn-g" style="font-family:inherit">Doe de gratis scan <span class="a">&rarr;</span></button>
+      <p class="legal"><b>Geen trucs, geen offshore.</b> Gewoon de regels die in de wet staan, op de juiste volgorde toegepast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="tint">
+  <div class="inner">
+    <div class="sec-head r">
+      <div class="eyebrow">Geverifieerde cases</div>
+      <h2>Wat het oplevert in de praktijk.</h2>
+      <p>Echte trajecten van ondernemers die ooit ook met een boekhouder en goede bedoelingen begonnen. Bedragen geverifieerd door Vos &amp; Goldberg.</p>
+    </div>
+    <div class="case-stats r">
+      <div class="cs"><div class="n">&euro;596.000+</div><div class="l">Per jaar geoptimaliseerd</div></div>
+      <div class="cs"><div class="n">&euro;25.940</div><div class="l">Gemiddeld per ondernemer</div></div>
+      <div class="cs"><div class="n">200+</div><div class="l">Ondernemerstrajecten</div></div>
+    </div>
+    <div class="case-cards">
+      <div class="cc r"><div class="cc-img"><img src="https://compoundquadrant.nl/vsl/assets/cases/11.png" alt="" loading="lazy"><span class="tag">IT-consultant</span></div><div class="cc-b"><span class="cc-name">Mehmet E.</span><span class="cc-amt">&euro;21.850<span>per jaar geoptimaliseerd</span></span></div></div>
+      <div class="cc r"><div class="cc-img"><img src="https://compoundquadrant.nl/vsl/assets/cases/10.png" alt="" loading="lazy"><span class="tag">Rijschoolhouder</span></div><div class="cc-b"><span class="cc-name">Tycho v.K.</span><span class="cc-amt">&euro;18.000<span>per jaar geoptimaliseerd</span></span></div></div>
+      <div class="cc r"><div class="cc-img"><img src="https://compoundquadrant.nl/vsl/assets/cases/22.png" alt="" loading="lazy"><span class="tag">Energie &middot; thuisbatterij</span></div><div class="cc-b"><span class="cc-name">Munir A.</span><span class="cc-amt">&euro;31.200<span>per jaar geoptimaliseerd</span></span></div></div>
+    </div>
+    <p class="case-foot">Cases zijn geanonimiseerd. Resultaten hangen af van je eigen situatie en structuur.</p>
+  </div>
+</section>
+
+<!-- OVER RABI -->
+<section class="feat">
+  <div class="inner">
+    <div class="sec-head r" style="margin-bottom:2rem">
+      <div class="eyebrow">Over Rabi Adli</div>
+      <h2>Geen goeroe. <em>Een insider die de spelregels kent.</em></h2>
+    </div>
+    <article class="rabi r">
+      <figure class="rabi-foto"><img src="assets/insider.jpg" alt="Rabi Adli" loading="lazy"><figcaption>Rabi Adli &middot; Compound Quadrant</figcaption></figure>
+      <div class="rabi-b">
+        <p>Rabi Adli werkte 15 jaar in finance, waarvan 7 jaar van binnenuit bij banken als ABN AMRO, Knab en Deloitte. Hij zag hoe vermogende klanten hun structuur opbouwden. <strong>En hij zag hoe ondernemers met dezelfde winst structureel minder overhielden</strong>, puur door een kennisverschil.</p>
+        <p>De regels over belasting en vermogen staan gewoon in de wet. Hetzelfde boek voor iedereen. Alleen laten de vermogenden er specialisten op los, en hoort de ondernemer er nooit over. Niet omdat zijn boekhouder slecht is, maar omdat <em>boekhouden niet hetzelfde is als het ontwerpen van vermogen</em>.</p>
+        <p>Compound Quadrant is zijn antwoord op dat kennisverschil. Toegankelijk gemaakt voor de Nederlandse ondernemer.</p>
+        <div class="logos">
+          <span class="lbl">Bekend van</span>
+          <img src="https://compoundquadrant.nl/shared-assets/npo-radio1.svg" alt="" onerror="this.outerHTML='<span class=&quot;txt&quot;>NPO Radio 1</span>'">
+          <img src="https://compoundquadrant.nl/shared-assets/funx.svg" alt="" onerror="this.outerHTML='<span class=&quot;txt&quot;>FunX</span>'">
+          <img src="https://compoundquadrant.nl/shared-assets/telegraaf.svg" alt="" onerror="this.outerHTML='<span class=&quot;txt&quot;>De Telegraaf</span>'">
+          <span class="txt">BNR</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="inner">
+    <div class="sec-head r">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Wat ondernemers ons het vaakst vragen.</h2>
+    </div>
+    <div class="faq">
+      <details class="r" open><summary>Is dit legaal?</summary><div class="ans">Ja, volledig. Geen trucs, geen offshore-constructies. We gebruiken de regels die gewoon in de Nederlandse wet staan, alleen dan op de juiste volgorde en als samenhangend geheel toegepast. Precies wat grote spelers al jaren doen.</div></details>
+      <details class="r"><summary>Ik heb al een boekhouder. Waarom heb ik dit dan nog nodig?</summary><div class="ans">Je boekhouder doet je aangifte, en dat doet hij prima. Maar hij kijkt achteruit en denkt niet vooruit over je structuur, je risico of je vermogen. Wij vullen dat aan, we vervangen hem niet.</div></details>
+      <details class="r"><summary>Wat krijg ik na de scan?</summary><div class="ans">Meteen in je inbox: een rapport dat per onderdeel laat zien hoeveel je nog kunt optimaliseren, op basis van je eigen antwoorden. Gratis, geen account nodig. Wil je weten wat dat in euro&apos;s betekent, dan plan je daarna een gratis intake.</div></details>
+      <details class="r"><summary>Voor wie is dit minder geschikt?</summary><div class="ans">Als je net begint en nog geen winst maakt, of als je alleen je aangifte snel wil indienen, is een doorsnee boekhouder logischer en goedkoper. Twijfel je? Plan de intake. Dan weet je het binnen 15 minuten zeker.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- SCAN CTA -->
+<section class="intake" id="scan">
+  <div class="intake-in" style="grid-template-columns:1fr;max-width:720px;text-align:center;justify-items:center">
+    <div class="intake-l r" style="max-width:560px">
+      <div class="eyebrow" style="justify-content:center">Gratis CQ-scan</div>
+      <h2 style="text-align:center">Zie precies <em>waar je geld blijft liggen.</em></h2>
+      <p style="margin:0 auto 1.8rem;text-align:center">De scan loopt vier onderdelen langs: je boekhouding, je fiscale plaatje, je bescherming en je vermogen. Per onderdeel zie je waar je staat en wat je nu laat liggen. Vijf minuten, je rapport direct in je inbox.</p>
+      <button type="button" data-sa-url="https://6f77f9a2-5c27-497b-bbae-266d41c87728.scoreapp.com/?sa_target=_top" data-sa-view="popup" data-sa-size="full" class="btn btn-g" style="font-family:inherit;font-size:1.1rem;padding:1.25rem 2.3rem">Start de CQ-scan <span class="a">&rarr;</span></button>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:520px;margin:1.8rem auto 0;padding-top:1.5rem;border-top:1px solid var(--hair)">
+        <div style="font-family:var(--m);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600;line-height:1.5"><strong style="display:block;color:var(--cream);font-size:.78rem;margin-bottom:.15rem">01 &middot; Scan</strong>5 minuten</div>
+        <div style="font-family:var(--m);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600;line-height:1.5"><strong style="display:block;color:var(--cream);font-size:.78rem;margin-bottom:.15rem">02 &middot; Rapport</strong>Per onderdeel</div>
+        <div style="font-family:var(--m);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600;line-height:1.5"><strong style="display:block;color:var(--gold-b);font-size:.78rem;margin-bottom:.15rem">03 &middot; Intake</strong>Optioneel &middot; gratis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl">&copy; 2026 Compound Quadrant &middot; Adli Groep &middot; compoundquadrant.nl</div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scr',scrollY>20);},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.r').forEach(function(el){io.observe(el);});
+})();
+</script>
+<script src="https://static.scoreapp.com/js/integration/v1/embedding.js?v=UILRRK"></script>
+</body>
+</html>
